@@ -21,10 +21,10 @@ public class JwtTokenHelper implements Serializable {
 
     private static final long serialVersionUID = 1579222883969867182L;
 
-    @Value("${febs.gateway.jwt.secret}")
+    @Value("${dsg.gateway.jwt.secret}")
     private String secret;
 
-    @Value("${febs.gateway.jwt.expiration}")
+    @Value("${dsg.gateway.jwt.expiration}")
     private String expirationTime;
 
     public Claims getAllClaimsFromToken(String token) {

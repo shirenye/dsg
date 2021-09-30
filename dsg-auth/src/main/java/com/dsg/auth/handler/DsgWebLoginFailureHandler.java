@@ -27,7 +27,7 @@ public class DsgWebLoginFailureHandler implements AuthenticationFailureHandler {
         } else {
             message = "认证失败，请联系网站管理员！";
         }
-        DsgResponse febsResponse = new DsgResponse().message(message);
-        DsgUtil.makeFailureResponse(httpServletResponse, febsResponse);
+        DsgResponse DsgResponse = new DsgResponse().message(message);
+        DsgUtil.makeFailureResponse(httpServletResponse, DsgResponse);
     }
 }

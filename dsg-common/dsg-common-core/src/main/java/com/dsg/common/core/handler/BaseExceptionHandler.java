@@ -40,7 +40,7 @@ public class BaseExceptionHandler {
     @ExceptionHandler(value = DsgException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public DsgResponse handleDsgException(DsgException e) {
-        log.error("FEBS系统异常", e);
+        log.error("Dsg系统异常", e);
         return new DsgResponse().message(e.getMessage());
     }
 

@@ -1,7 +1,7 @@
 package com.dsg.common.core.exception;
 
 /**
- * FEBS系统异常
+ * Dsg系统异常
  *
  * @author MrBird
  */

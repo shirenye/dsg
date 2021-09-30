@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
  * @author cdw
  * @date 2021/9/30 10:27
  */
-@Component
 @ConfigurationProperties(prefix = "dsg.cloud.security")
 public class DsgSecurityProperties {
 
@@ -64,7 +63,7 @@ public class DsgSecurityProperties {
 
     @Override
     public String toString() {
-        return "FebsCloudSecurityProperties{" +
+        return "DsgCloudSecurityProperties{" +
                 "enable=" + enable +
                 ", authUri='" + authUri + '\'' +
                 ", anonUris='" + anonUris + '\'' +

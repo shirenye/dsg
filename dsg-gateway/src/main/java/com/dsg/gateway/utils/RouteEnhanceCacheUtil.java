@@ -8,9 +8,9 @@ import com.dsg.common.core.constant.DsgConstant;
  */
 public abstract class RouteEnhanceCacheUtil {
 
-    private static final String BLACKLIST_CHACHE_KEY_PREFIX = "febs:route:blacklist:";
-    private static final String RATELIMIT_CACHE_KEY_PREFIX = "febs:route:ratelimit:";
-    private static final String RATELIMIT_COUNT_KEY_PREFIX = "febs:route:ratelimit:cout:";
+    private static final String BLACKLIST_CHACHE_KEY_PREFIX = "Dsg:route:blacklist:";
+    private static final String RATELIMIT_CACHE_KEY_PREFIX = "Dsg:route:ratelimit:";
+    private static final String RATELIMIT_COUNT_KEY_PREFIX = "Dsg:route:ratelimit:cout:";
 
     public static String getBlackListCacheKey(String ip) {
         if (DsgConstant.LOCALHOST.equalsIgnoreCase(ip)) {

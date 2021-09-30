@@ -16,6 +16,7 @@
         <module>dsg-common-redis</module>
         <module>dsg-common-datasource</module>
         <module>dsg-common-gateway</module>
+        <module>dsg-common-doc</module>
     </modules>
 
     <properties>

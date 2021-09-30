@@ -21,7 +21,7 @@ public class DsgSecurityInteceptorConfigure implements WebMvcConfigurer {
     }
 
     @Bean
-    public HandlerInterceptor febsServerProtectInterceptor() {
+    public HandlerInterceptor DsgServerProtectInterceptor() {
         DsgServerProtectInterceptor dsgServerProtectInterceptor = new DsgServerProtectInterceptor();
         dsgServerProtectInterceptor.setProperties(properties);
         return dsgServerProtectInterceptor;
@@ -30,6 +30,6 @@ public class DsgSecurityInteceptorConfigure implements WebMvcConfigurer {
     @Override
     @SuppressWarnings("all")
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(febsServerProtectInterceptor());
+        registry.addInterceptor(DsgServerProtectInterceptor());
     }
 }

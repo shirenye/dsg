@@ -28,7 +28,7 @@ import java.util.regex.Pattern;
 import java.util.stream.IntStream;
 
 /**
- * FEBS工具类
+ * Dsg工具类
  *
  * @author MrBird
  */
@@ -331,8 +331,8 @@ public abstract class DsgUtil {
 //     */
 //    public static String getCurrentUsername() {
 //        Object principal = getOauth2Authentication().getPrincipal();
-//        if (principal instanceof FebsAuthUser) {
-//            return ((FebsAuthUser) principal).getUsername();
+//        if (principal instanceof DsgAuthUser) {
+//            return ((DsgAuthUser) principal).getUsername();
 //        }
 //        return (String) getOauth2Authentication().getPrincipal();
 //    }

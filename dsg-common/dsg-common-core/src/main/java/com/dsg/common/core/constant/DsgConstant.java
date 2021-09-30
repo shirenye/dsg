@@ -1,7 +1,7 @@
 package com.dsg.common.core.constant;
 
 /**
- * FEBS系统常量类
+ * Dsg系统常量类
  *
  * @author MrBird
  */
@@ -23,7 +23,7 @@ public interface DsgConstant {
     /**
      * Gateway请求头TOKEN值
      */
-    String GATEWAY_TOKEN_VALUE = "febs:gateway:123456";
+    String GATEWAY_TOKEN_VALUE = "Dsg:gateway:123456";
 
     /**
      * 允许下载的文件类型，根据需求自己添加（小写）
@@ -33,12 +33,12 @@ public interface DsgConstant {
     /**
      * 验证码 key前缀
      */
-    String CODE_PREFIX = "febs.captcha.";
+    String CODE_PREFIX = "Dsg.captcha.";
 
     /**
      * 异步线程池名称
      */
-    String ASYNC_POOL = "febsAsyncThreadPool";
+    String ASYNC_POOL = "DsgAsyncThreadPool";
 
     /**
      * OAUTH2 令牌类型 https://oauth.net/2/bearer-tokens/

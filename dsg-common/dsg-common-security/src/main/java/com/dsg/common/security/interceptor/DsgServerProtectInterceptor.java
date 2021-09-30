@@ -29,8 +29,8 @@ public class DsgServerProtectInterceptor implements HandlerInterceptor {
         if (StringUtils.equals(gatewayToken, token)) {
             return true;
         } else {
-            DsgResponse febsResponse = new DsgResponse();
-            DsgUtil.makeJsonResponse(response, HttpServletResponse.SC_FORBIDDEN, febsResponse.message("请通过网关获取资源"));
+            DsgResponse DsgResponse = new DsgResponse();
+            DsgUtil.makeJsonResponse(response, HttpServletResponse.SC_FORBIDDEN, DsgResponse.message("请通过网关获取资源"));
             return false;
         }
     }

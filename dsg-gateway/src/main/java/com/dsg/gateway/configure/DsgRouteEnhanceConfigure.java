@@ -21,7 +21,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 @EnableAsync
 @Configuration
 @EnableReactiveMongoRepositories(basePackages = "com.dsg.gateway.mapper")
-@ConditionalOnProperty(name = "febs.gateway.enhance", havingValue = "true")
+@ConditionalOnProperty(name = "Dsg.gateway.enhance", havingValue = "true")
 public class DsgRouteEnhanceConfigure {
 
     @Bean(DsgConstant.ASYNC_POOL)
@@ -31,7 +31,7 @@ public class DsgRouteEnhanceConfigure {
         executor.setMaxPoolSize(20);
         executor.setQueueCapacity(100);
         executor.setKeepAliveSeconds(30);
-        executor.setThreadNamePrefix("Febs-Gateway-Async-Thread");
+        executor.setThreadNamePrefix("Dsg-Gateway-Async-Thread");
         executor.setWaitForTasksToCompleteOnShutdown(true);
         executor.setAwaitTerminationSeconds(60);
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
@@ -40,7 +40,7 @@ public class DsgRouteEnhanceConfigure {
     }
 
     @Bean
-    public ApplicationRunner febsRouteEnhanceRunner(RouteEnhanceCacheService cacheService,
+    public ApplicationRunner DsgRouteEnhanceRunner(RouteEnhanceCacheService cacheService,
                                                     BlackListService blackListService,
                                                     RateLimitRuleService rateLimitRuleService) {
         return new DsgRouteEnhanceRunner(cacheService, blackListService, rateLimitRuleService);

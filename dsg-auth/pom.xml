@@ -31,7 +31,7 @@
         <dependency>
             <groupId>com.dsg</groupId>
             <artifactId>dsg-manager</artifactId>
-         </dependency>
+        </dependency>
         <dependency>
             <groupId>com.dsg</groupId>
             <artifactId>dsg-common-security</artifactId>

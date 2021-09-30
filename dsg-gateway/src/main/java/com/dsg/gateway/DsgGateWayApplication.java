@@ -2,6 +2,7 @@ package com.dsg.gateway;
 
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
 /**
@@ -10,7 +11,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  * @date 2021/9/19 17:03
  */
 
-@SpringBootApplication
+@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
 public class DsgGateWayApplication {
 
     public static void main(String[] args) {
