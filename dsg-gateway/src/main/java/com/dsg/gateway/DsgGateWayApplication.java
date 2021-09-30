@@ -4,6 +4,7 @@ import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * 网关启动类
@@ -11,7 +12,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  * @date 2021/9/19 17:03
  */
 
-@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
+@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class} )
+@ComponentScan(basePackages = {"com.dsg.common.gateway", "com.dsg.gateway"})
 public class DsgGateWayApplication {
 
     public static void main(String[] args) {

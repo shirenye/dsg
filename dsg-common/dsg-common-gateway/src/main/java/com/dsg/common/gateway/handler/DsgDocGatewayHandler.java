@@ -1,4 +1,4 @@
-package com.dsg.common.gateway;
+package com.dsg.common.gateway.handler;
 
 import com.dsg.common.gateway.properties.DsgDocGatewayProperties;
 import org.apache.commons.lang3.StringUtils;

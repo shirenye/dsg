@@ -1,7 +1,7 @@
 package com.dsg.common.gateway.configure;
 
-import com.dsg.common.gateway.DsgDocGatewayHandler;
-import com.dsg.common.gateway.DsgDocGatewayHeaderFilter;
+import com.dsg.common.gateway.handler.DsgDocGatewayHandler;
+import com.dsg.common.gateway.filter.DsgDocGatewayHeaderFilter;
 import com.dsg.common.gateway.properties.DsgDocGatewayProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -41,17 +41,17 @@ public class DsgDocGatewayAutoConfigure {
     }
 
     @Bean
-    public DsgDocGatewayResourceConfigure DsgDocGatewayResourceConfigure(RouteLocator routeLocator, GatewayProperties gatewayProperties) {
+    public DsgDocGatewayResourceConfigure dsgDocGatewayResourceConfigure(RouteLocator routeLocator, GatewayProperties gatewayProperties) {
         return new DsgDocGatewayResourceConfigure(routeLocator, gatewayProperties);
     }
 
     @Bean
-    public DsgDocGatewayHeaderFilter DsgDocGatewayHeaderFilter() {
+    public DsgDocGatewayHeaderFilter dsgDocGatewayHeaderFilter() {
         return new DsgDocGatewayHeaderFilter();
     }
 
     @Bean
-    public DsgDocGatewayHandler DsgDocGatewayHandler(SwaggerResourcesProvider swaggerResources) {
+    public DsgDocGatewayHandler dsgDocGatewayHandler(SwaggerResourcesProvider swaggerResources) {
         DsgDocGatewayHandler DsgDocGatewayHandler = new DsgDocGatewayHandler();
         DsgDocGatewayHandler.setSecurityConfiguration(securityConfiguration);
         DsgDocGatewayHandler.setUiConfiguration(uiConfiguration);

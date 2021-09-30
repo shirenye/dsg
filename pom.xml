@@ -272,6 +272,11 @@
                 <artifactId>dsg-common-doc</artifactId>
                 <version>${dsg-version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.dsg</groupId>
+                <artifactId>dsg-common-gateway</artifactId>
+                <version>${dsg-version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
