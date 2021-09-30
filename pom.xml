@@ -14,6 +14,7 @@
         <module>dsg-gateway</module>
         <module>dsg-auth</module>
         <module>dsg-web-api</module>
+        <module>dsg-server</module>
     </modules>
 
     <properties>
@@ -48,6 +49,7 @@
         <dynamic-datasource.version>2.5.7</dynamic-datasource.version>
         <jjwt.version>0.9.1</jjwt.version>
         <easy-captcha.version>1.6.2</easy-captcha.version>
+        <ip2region.version>1.7</ip2region.version>
     </properties>
 
     <!-- 依赖声明 -->
@@ -202,6 +204,11 @@
                 <version>${easy-captcha.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.lionsoul</groupId>
+                <artifactId>ip2region</artifactId>
+                <version>${ip2region.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.dsg</groupId>
                 <artifactId>dsg-common-core</artifactId>
                 <version>${dsg-version}</version>
@@ -219,6 +226,11 @@
             <dependency>
                 <groupId>com.dsg</groupId>
                 <artifactId>dsg-manager</artifactId>
+                <version>${dsg-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dsg</groupId>
+                <artifactId>dsg-common-security</artifactId>
                 <version>${dsg-version}</version>
             </dependency>
         </dependencies>

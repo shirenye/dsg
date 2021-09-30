@@ -1,11 +1,10 @@
-package com.dsg.auth.config;
+package com.dsg.auth.configure;
 
 import com.dsg.auth.properties.DsgAuthProperties;
 import com.dsg.auth.service.impl.RedisAuthenticationCodeService;
 import com.dsg.auth.service.impl.RedisClientDetailsServiceImpl;
 import com.dsg.auth.translator.DsgWebResponseExceptionTranslator;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -19,7 +18,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.OAuth2RequestFactory;
-import org.springframework.security.oauth2.provider.endpoint.TokenKeyEndpoint;
 import org.springframework.security.oauth2.provider.password.ResourceOwnerPasswordTokenGranter;
 import org.springframework.security.oauth2.provider.request.DefaultOAuth2RequestFactory;
 import org.springframework.security.oauth2.provider.token.DefaultAccessTokenConverter;
@@ -30,7 +28,6 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 
-import javax.sql.DataSource;
 import java.util.UUID;
 
 /**
@@ -78,6 +75,10 @@ public class DsgAuthorizationServerConfigure extends AuthorizationServerConfigur
         security.allowFormAuthenticationForClients();
     }
 
+    /**
+     * token服务
+     * @return
+     */
     @Bean
     public TokenStore tokenStore() {
         if (properties.getEnableJwt()) {
@@ -102,11 +103,14 @@ public class DsgAuthorizationServerConfigure extends AuthorizationServerConfigur
         return accessTokenConverter;
     }
 
+    /**
+     * token生成配置
+     * @return
+     */
     @Bean
     @Primary
     public DefaultTokenServices defaultTokenServices() {
         DefaultTokenServices tokenServices = new DefaultTokenServices();
-
         tokenServices.setTokenStore(tokenStore());
         tokenServices.setSupportRefreshToken(true);
         tokenServices.setClientDetailsService(redisClientDetailsService);

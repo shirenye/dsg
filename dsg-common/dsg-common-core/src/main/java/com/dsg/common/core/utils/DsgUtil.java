@@ -5,11 +5,19 @@ import com.dsg.common.core.constant.RegexpConstant;
 import com.dsg.common.core.constant.StringConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.reactive.ServerHttpRequest;
+import org.springframework.http.server.reactive.ServerHttpResponse;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
+import org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+import reactor.core.publisher.Mono;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -250,6 +258,41 @@ public abstract class DsgUtil {
         return matcher.find();
     }
 
+    /**
+     * 获取当前令牌内容
+     *
+     * @return String 令牌内容
+     */
+    public static String getCurrentTokenValue() {
+        try {
+            OAuth2AuthenticationDetails details = (OAuth2AuthenticationDetails) getOauth2Authentication().getDetails();
+            return details.getTokenValue();
+        } catch (Exception ignore) {
+            return null;
+        }
+    }
+
+    private static OAuth2Authentication getOauth2Authentication() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return (OAuth2Authentication) authentication;
+    }
+
+    /**
+     * 设置webflux模型响应
+     *
+     * @param response    ServerHttpResponse
+     * @param contentType content-type
+     * @param status      http状态码
+     * @param value       响应内容
+     * @return Mono<Void>
+     */
+    public static Mono<Void> makeWebFluxResponse(ServerHttpResponse response, String contentType,
+                                                 HttpStatus status, Object value) {
+        response.setStatusCode(status);
+        response.getHeaders().add(HttpHeaders.CONTENT_TYPE, contentType);
+        DataBuffer dataBuffer = response.bufferFactory().wrap(JSONObject.toJSONString(value).getBytes());
+        return response.writeWith(Mono.just(dataBuffer));
+    }
 //    /**
 //     * 判断是否包含中文
 //     *
