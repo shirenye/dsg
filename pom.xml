@@ -53,6 +53,7 @@
         <knife4j.version>2.0.2</knife4j.version>
         <springfox.version>2.9.2</springfox.version>
         <swagger.version>1.5.21</swagger.version>
+        <rabbitmq.version></rabbitmq.version>
     </properties>
 
     <!-- 依赖声明 -->

@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
     <artifactId>dsg-common-security</artifactId>
+    <description>认证相关模块</description>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

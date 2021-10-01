@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
     <artifactId>dsg-auth</artifactId>
+    <description>认证服务</description>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

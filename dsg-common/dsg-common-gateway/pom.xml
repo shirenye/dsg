@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dsg-common-gateway</artifactId>
+    <description>网关相关模块</description>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
