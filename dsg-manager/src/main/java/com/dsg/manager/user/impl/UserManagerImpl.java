@@ -39,11 +39,6 @@ public class UserManagerImpl implements UserManager {
     @Override
     public SystemUser findByName(String username) {
         SystemUser user = userMapper.findByName(username);
-        if (user != null) {
-            List<UserDataPermission> permissions = userMapper.findUserDataPermissions(user.getUserId());
-            String deptIds = permissions.stream().map(p -> String.valueOf(p.getDeptId())).collect(Collectors.joining(StringConstant.COMMA));
-            user.setDeptIds(deptIds);
-        }
         return user;
     }
 
