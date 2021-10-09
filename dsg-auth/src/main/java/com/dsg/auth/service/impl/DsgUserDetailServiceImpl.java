@@ -29,6 +29,7 @@ public class DsgUserDetailServiceImpl implements UserDetailsService {
 
     private final UserManager userManager;
 
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         SystemUser systemUser = userManager.findByName(username);
