@@ -10,7 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dsg-web-api</artifactId>
-    <description>接服务模块</description>
+    <description>服务接口模块</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>dsg-file-api</module>
+        <module>dsg-system-api</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

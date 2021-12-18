@@ -1,12 +1,11 @@
 package com.dsg.auth;
 
 //import org.mybatis.spring.annotation.MapperScan;
+
 import com.dsg.common.security.annotation.EnableDsgResourceServer;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 //import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 
@@ -19,7 +18,7 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @MapperScan("com.dsg.manager.mapper")
 @EnableDsgResourceServer
 @SpringBootApplication(scanBasePackages={"com.dsg.*"})
-public class DsgAuthApplication {
+public class  DsgAuthApplication {
 
     public static void main(String[] args)
     {

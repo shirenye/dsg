@@ -13,8 +13,8 @@
         <module>dsg-common</module>
         <module>dsg-gateway</module>
         <module>dsg-auth</module>
-        <module>dsg-web-api</module>
         <module>dsg-server</module>
+        <module>dsg-web-api</module>
     </modules>
 
     <properties>

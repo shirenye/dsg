@@ -26,8 +26,7 @@ public class LoginController {
     @GetMapping("/test")
     @ResponseBody
     public String test() {
-        redisService.set("asfsaf","时发生大事发生法发");
-
+        redisService.set("asfsaf", "时发生大事发生法发");
         return (String) redisService.get("asfsaf");
     }
 

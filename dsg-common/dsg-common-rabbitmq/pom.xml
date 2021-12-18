@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dsg-rabbitmq</artifactId>
+    <artifactId>dsg-common-rabbitmq</artifactId>
     <description>rabbit相关模块</description>
 
     <properties>
